@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Redirecting...</title>
+  <meta charset="utf-8" />
+  <script type="text/javascript">
+    // This script will grab the destination URL from the query parameter.
+    // For example: ...github.io/secure-doc/?https://example.com
+    var destination = window.location.search.substring(1);
+    if (destination) {
+      // If a destination was found, redirect immediately.
+      // We also decode it in case it's URL-encoded.
+      try {
+        window.location.replace(decodeURIComponent(destination));
+      } catch (e) {
+        console.error("Redirection failed:", e);
+      }
+    }
+  </script>
+  <!-- A fallback for browsers with JavaScript disabled -->
+  <noscript>
+    <meta http-equiv="refresh" content="0; url=about:blank" />
+  </noscript>
+</head>
+<body>
+  <p>Redirecting...</p>
+</body>
+</html>
