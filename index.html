@@ -22,10 +22,7 @@
       var destination = params.get('dest'); // Get the value of the 'dest' parameter
 
       if (destination) {
-        // If a destination is found, redirect immediately.
         window.location.replace(destination);
-
-        // Also, prepare a fallback link in case the redirect is blocked.
         var fallbackElement = document.getElementById('fallback-link');
         var fallbackAnchor = fallbackElement.querySelector('a');
         if (fallbackElement && fallbackAnchor) {
@@ -33,7 +30,6 @@
           fallbackElement.style.display = 'block';
         }
       } else {
-        // If no 'dest' parameter is found, show an error.
         document.body.innerHTML = '<p>Error: No destination URL was provided.</p>';
       }
     } catch (e) {
@@ -41,10 +37,5 @@
       document.body.innerHTML = '<p>An error occurred during redirection.</p>';
     }
   </script>
-
-  <!-- A fallback for browsers with JavaScript disabled -->
-  <noscript>
-    <p>JavaScript is required for automatic redirection. Please enable it.</p>
-  </noscript>
 </body>
 </html>
